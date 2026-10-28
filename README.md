@@ -1,2 +1,0 @@
-# izalDev
-about me
