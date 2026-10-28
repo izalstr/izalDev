@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mamah Inah - Belanja Mudah, Hidup Lebih Baik</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+<body>
+<header class="site-header">
+  <div class="mobile-market-header">
+    <div class="mobile-search-row">
+      <form class="mobile-search" id="mobileSearchForm">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input id="mobileSearchInput" type="search" placeholder="Cari" aria-label="Cari produk di mobile">
+      </form>
+      <div class="action-item">
+        <button class="mobile-header-icon" aria-label="Pesan"><i class="fa-regular fa-envelope"></i><span class="badge-count">0</span></button>
+        <div class="hover-box"><div class="hover-title">Pesan</div><div class="mini-empty">Belum ada pesan baru.</div></div>
+      </div>
+      <div class="action-item">
+        <button class="mobile-header-icon" aria-label="Notifikasi"><i class="fa-regular fa-bell"></i><span class="badge-count">0</span></button>
+        <div class="hover-box"><div class="hover-title">Notifikasi</div><div class="mini-empty">Belum ada notifikasi baru.</div></div>
+      </div>
+      <div class="action-item">
+        <button class="mobile-header-icon" aria-label="Keranjang"><i class="fa-solid fa-bag-shopping"></i><span class="badge-count" id="mobileCartCount">0</span></button>
+        <div class="hover-box"><div class="hover-title">Keranjang Belanja</div><div id="mobileMiniCart"><div class="mini-empty">Keranjang kamu masih kosong.</div></div><div class="d-flex justify-content-between fw-bold small py-2"><span>Total</span><span class="text-success" id="mobileCartTotal">Rp 0</span></div><a href="#produk" class="btn btn-success btn-sm w-100">Lihat Keranjang</a></div>
+      </div>
+    </div>
+    <div class="mobile-delivery">
+      <div class="location-line"><i class="fa-solid fa-location-dot me-1"></i>Dikirim ke : <a href="#pesan">Pilih Pengiriman</a></div>
+      <div class="mobile-account">
+        <span class="account-avatar"><i class="fa-regular fa-user"></i></span>
+        <div><strong>Hai, Pengunjung!</strong><small>Akses semua fitur, yuk~</small></div>
+<button class="mobile-login" type="button" data-bs-toggle="modal" data-bs-target="#loginModal">
+    Masuk
+</button>
+        <!-- <button class="mobile-login" type="button" onclick="toast('Fitur masuk perlu dihubungkan ke sistem login.')">Masuk</button> -->
+      </div>
+    </div>
+  </div>
+
+  <div class="topbar">
+    <div class="container-fluid px-3 px-lg-4 d-flex justify-content-between align-items-center">
+      <a class="sell-text fw-semibold" href="#jual">Yuk Jual Beli di TAJALAPAK, Daftar Sekarang!</a>
+      <div class="right-links">
+        <a href="#bahasa">Language <i class="fa-solid fa-chevron-down"></i></a>
+        <a href="tel:081285932794"><i class="fa-solid fa-phone"></i> Bantuan: 081285932794</a>
+        <a href="#pesanan"><i class="fa-solid fa-location-dot"></i> Telusuri Pesanan</a>
+<a href="#" data-bs-toggle="modal" data-bs-target="#loginModal">
+    <i class="fa-regular fa-user"></i> Login
+</a>
+      </div>
+    </div>
+  </div>
+  <div class="main-head">
+    <div class="container-fluid px-3 px-lg-4 d-flex align-items-center gap-3">
+      <a class="brand" href="#home" aria-label="TajalaLapak beranda">
+        <i class="fa-solid fa-leaf brand-mark"></i>
+        <span class="brand-name">Mamah<span> Inah</span><small>Belanja Mudah, Hidup Lebih Baik</small></span>
+      </a>
+      <div class="search-wrap">
+        <form class="input-group" id="searchForm">
+          <input id="searchInput" class="form-control" type="search" placeholder="Cari produk, makanan, atau layanan..." aria-label="Cari">
+          <button class="btn btn-success" type="submit">Cari</button>
+        </form>
+        <div class="trending"><b>Trending:</b> #pria &nbsp; | &nbsp; #elektronik &nbsp; | &nbsp; #jeans &nbsp; | &nbsp; #software</div>
+      </div>
+      <div class="head-actions ms-auto">
+        <div class="action-item">
+          <button class="icon-action" aria-label="Notifikasi"><i class="fa-regular fa-bell"></i><span class="badge-count">0</span></button>
+          <div class="hover-box">
+            <div class="hover-title"><i class="fa-regular fa-bell text-success me-2"></i>Notifikasi</div>
+            <div class="mini-empty"><i class="fa-regular fa-bell-slash fs-4 d-block mb-2"></i>Belum ada notifikasi baru.</div>
+            <a href="#notifikasi" class="btn btn-sm btn-outline-success w-100">Lihat semua notifikasi</a>
+          </div>
+        </div>
+        <div class="action-item">
+          <button class="icon-action" aria-label="Keranjang"><i class="fa-solid fa-bag-shopping"></i><span class="badge-count" id="cartCount">0</span></button>
+          <div class="hover-box">
+            <div class="hover-title">Keranjang Belanja</div>
+            <div id="miniCartItems"><div class="mini-empty" id="cartEmpty"><i class="fa-solid fa-basket-shopping fs-4 d-block mb-2"></i>Keranjang kamu masih kosong.</div></div>
+            <div class="d-flex justify-content-between fw-bold small py-2"><span>Total</span><span class="text-success" id="cartTotal">Rp 0</span></div>
+            <a href="#keranjang" class="btn btn-success btn-sm w-100">Lihat Keranjang</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <nav class="nav-strip">
+    <div class="container-fluid px-3 px-lg-4 nav-inner">
+      <a class="category-toggle" href="#kategori"><i class="fa-solid fa-bars me-2"></i>Kategori</a>
+      <div class="nav-links">
+        <a href="#blog">Blog</a><a href="#forum">Forum</a><a href="#shop">Shop <i class="fa-solid fa-chevron-down ms-1" style="font-size:8px"></i></a><a href="#mall">Tajalapak Mall</a><a href="#landing">Landing Page</a>
+      </div>
+      <div class="nav-links"><a href="#tentang">Tentang</a><a href="#cara-belanja">Cara Belanja</a></div>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="container-fluid px-3 px-lg-5">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <div class="eyebrow"><i class="fa-solid fa-leaf"></i> Makanan Lezat &amp; Berkualitas</div>
+          <h1>Rasakan Nikmatnya Kuliner Nusantara</h1>
+          <p>Pilihan menu terbaik, langsung dari penjual terpercaya.</p>
+          <a class="btn btn-green" href="#produk">Belanja Sekarang <i class="fa-solid fa-arrow-right ms-1"></i></a>
+        </div>
+        <div class="order-card" id="pesan">
+          <h2>Pesan Sekarang</h2><div class="sub">Pesan ojek &amp; kurir, lebih mudah!</div>
+          <form id="orderForm">
+            <div class="row g-2">
+              <div class="col-6"><input class="form-control" required placeholder="Nama lengkap"></div>
+              <div class="col-6"><input class="form-control" required inputmode="tel" placeholder="No. Whatsapp (628...)"></div>
+            </div>
+            <div class="d-flex justify-content-between align-items-center"><label for="pickup">Alamat Jemput</label><button class="outline-green" type="button" onclick="useLocation()">Pakai Lokasi Saya</button></div>
+            <input id="pickup" class="form-control" required placeholder="Klik untuk pilih titik jemput">
+            <div class="d-flex justify-content-between align-items-center"><label for="destination">Alamat Tujuan</label><button class="outline-green" type="button" onclick="swapAddress()">Tukar</button></div>
+            <input id="destination" class="form-control" required placeholder="Klik untuk pilih titik tujuan">
+            <div class="d-flex gap-2 mt-2">
+              <select class="form-select" required aria-label="Jenis kurir"><option value="">Pilih jenis kurir</option><option>Ojek</option><option>Kurir Barang</option><option>Mobil</option></select>
+              <button class="outline-green" type="button" onclick="addNote()">＋ Tambah Catatan</button>
+            </div>
+            <input id="orderNote" class="form-control mt-2 d-none" placeholder="Catatan untuk pengemudi">
+            <div class="form-hint">Pilih kurir dan tujuan untuk menghitung ongkir.</div>
+            <button class="btn btn-green order-submit" type="submit">Pesan Sekarang</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-wrap">
+    <section id="layanan">
+      <div class="heading-band fw-bold">Fitur Unggulan</div>
+      <div class="service-row mt-1">
+        <a href="#produk" class="service-card"><img src="https://cdn-icons-png.flaticon.com/128/616/616408.png" alt=""><span>Cat Grooming</span></a>
+        <a href="#produk" class="service-card"><img src="https://cdn-icons-png.flaticon.com/128/2972/2972185.png" alt=""><span>Cuci Motor</span></a>
+        <a href="#produk" class="service-card"><img src="https://cdn-icons-png.flaticon.com/128/2554/2554936.png" alt=""><span>General Cleaning</span></a>
+        <a href="#produk" class="service-card"><img src="https://cdn-icons-png.flaticon.com/128/3063/3063822.png" alt=""><span>Cuci Mobil</span></a>
+        <a href="#produk" class="service-card"><img src="https://cdn-icons-png.flaticon.com/128/2933/2933245.png" alt=""><span>Deep Cleaning</span></a>
+        <a href="#produk" class="service-card"><img src="https://cdn-icons-png.flaticon.com/128/911/911409.png" alt=""><span>Service AC</span></a>
+        <a href="#produk" class="service-card"><img src="https://cdn-icons-png.flaticon.com/128/2553/2553645.png" alt=""><span>Cuci Sofa</span></a>
+        <a href="#produk" class="service-card"><img src="https://cdn-icons-png.flaticon.com/128/2933/2933245.png" alt=""><span>Cuci Kasur</span></a>
+        <a href="#produk" class="service-card"><img src="https://cdn-icons-png.flaticon.com/128/3103/3103446.png" alt=""><span>Tukang Listrik</span></a>
+        <a href="#produk" class="service-card"><img src="https://cdn-icons-png.flaticon.com/128/2933/2933116.png" alt=""><span>Tukang Air</span></a>
+      </div>
+    </section>
+
+    <section class="mobile-balance" aria-label="Saldo dan cashback">
+      <span class="balance-icon"><i class="fa-regular fa-credit-card"></i></span>
+      <div class="balance-info"><strong>Rp 0 <i class="fa-regular fa-plus"></i></strong><small>Cashback Rp 0</small></div>
+      <button class="balance-more" type="button" onclick="toast('Fitur lainnya akan segera tersedia.')"><i class="fa-solid fa-ellipsis"></i><br>Lainnya</button>
+    </section>
+
+    <section class="mobile-discount-panel" aria-label="Menu populer">
+      <div class="mobile-discount-grid">
+        <a class="mobile-discount-item" href="#produk"><div class="discount-img"><img src="https://cdn-icons-png.flaticon.com/128/3063/3063822.png" alt=""><b>MURAH</b></div><span>GoJek</span></a>
+        <a class="mobile-discount-item" href="#produk"><div class="discount-img"><img src="https://cdn-icons-png.flaticon.com/128/2554/2554936.png" alt=""><b>-30rb</b></div><span>GoKar</span></a>
+        <a class="mobile-discount-item" href="#produk"><div class="discount-img"><img src="https://cdn-icons-png.flaticon.com/128/2972/2972185.png" alt=""><b>-70%</b></div><span>GoTruk</span></a>
+        <a class="mobile-discount-item" href="#produk"><div class="discount-img"><img src="https://cdn-icons-png.flaticon.com/128/679/679720.png" alt=""><b>GRATIS</b></div><span>Delivery</span></a>
+        <a class="mobile-discount-item" href="#produk"><div class="discount-img"><img src="https://cdn-icons-png.flaticon.com/128/3081/3081559.png" alt=""><b>30MINS</b></div><span>Belanja</span></a>
+        <a class="mobile-discount-item" href="#produk"><div class="discount-img"><img src="https://cdn-icons-png.flaticon.com/128/3135/3135706.png" alt="" onerror="this.src='https://cdn-icons-png.flaticon.com/128/3135/3135706.png'"><b>35JUTA</b></div><span>Donasi</span></a>
+        <a class="mobile-discount-item" href="#produk"><div class="discount-img"><img src="https://cdn-icons-png.flaticon.com/128/2553/2553645.png" alt=""><b>-10%</b></div><span>GoPai</span></a>
+        <a class="mobile-discount-item" href="#produk"><div class="discount-img"><img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=120&q=80" alt=""><b></b></div><span>GoFud</span></a>
+
+        
+      </div>
+      <div class="mobile-deal-banner">Pasti dapat diskon tiap hari<a href="#produk">Lihat keuntungan PLUS <i class="fa-solid fa-arrow-right"></i></a></div>
+    </section>
+
+    <section id="promo">
+      <h2 class="section-heading">Spesial di Hari ini</h2>
+      <div class="promo-grid">
+        <a href="#produk" class="promo promo-snack"><div><span class="kicker">Cemilan Favorit</span><strong>Diskon 30%</strong><span class="promo-btn">Beli Sekarang <i class="fa-solid fa-arrow-right"></i></span></div></a>
+        <a href="#produk" class="promo promo-drink"><div><span class="kicker">Minuman Segar<br>Mulai dari</span><strong>Rp 8.000</strong><span class="promo-btn">Beli Sekarang <i class="fa-solid fa-arrow-right"></i></span></div></a>
+        <a href="#produk" class="promo promo-food"><div><span class="kicker">Diskon Hingga</span><strong style="font-size:34px">50%</strong><span class="promo-btn">Beli Sekarang <i class="fa-solid fa-arrow-right"></i></span></div></a>
+      </div>
+    </section>
+
+    <section id="kategori">
+      <div class="heading-band fw-bold">Kategori Produk</div>
+      <div class="category-row mt-2">
+        <a href="#produk" class="category-card"><img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=150&q=80" alt=""><span>Perhiasan Aksesoris</span></a>
+        <a href="#produk" class="category-card"><img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=150&q=80" alt=""><span>Busana Wanita</span></a>
+        <a href="#produk" class="category-card"><img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=150&q=80" alt=""><span>Fashion &amp; Busana Pria</span></a>
+        <a href="#produk" class="category-card"><img src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?auto=format&fit=crop&w=150&q=80" alt=""><span>Alat Musik &amp; Pro Audio</span></a>
+        <a href="#produk" class="category-card"><img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=150&q=80" alt=""><span>Tas, Koper &amp; Perjalanan</span></a>
+        <a href="#produk" class="category-card"><img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=150&q=80" alt=""><span>Perhiasan dan Jam Tangan</span></a>
+        <a href="#produk" class="category-card"><img src="https://images.unsplash.com/photo-1571068316344-75bc76f77890?auto=format&fit=crop&w=150&q=80" alt="" onerror="this.src='https://cdn-icons-png.flaticon.com/128/2972/2972185.png'"><span>Olahraga dan Luar Rumah</span></a>
+        <a href="#produk" class="category-card"><img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=150&q=80" alt=""><span>Taman dan Alat Dapur</span></a>
+        <a href="#produk" class="category-card"><img src="https://cdn-icons-png.flaticon.com/128/906/906175.png" alt=""><span>Produk Digital</span></a>
+        <a href="#produk" class="category-card"><img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=150&q=80" alt=""><span>Makanan Sehat</span></a>
+      </div>
+    </section>
+
+    <section class="special" id="produk">
+      <div class="special-top">
+        <div class="d-flex align-items-center gap-2 flex-wrap">
+          <div class="special-title"><i class="fa-solid fa-bolt"></i> Penawaran Spesial</div>
+          <div class="countdown"><i class="fa-regular fa-clock me-1"></i> Berakhir Dalam: <strong id="countdown">01:36:36</strong></div>
+        </div>
+        <a class="see-all" href="#semua-produk">Lihat Semua <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="product-grid" id="productGrid">
+        <article class="product-card" data-name="Doppio espresso shot ganda" data-price="720" data-img="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=400&q=80">
+          <div class="product-image"><img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=400&q=80" alt="Doppio espresso"><span class="discount sold">Habis</span></div><div class="product-body"><div class="product-name">Doppio espresso shot ganda</div><div class="old-price">Rp 730</div><div class="new-price">Rp 720</div><button class="btn-cart" disabled>Habis</button></div>
+        </article>
+        <article class="product-card" data-name="Kepiting Goreng Spesial" data-price="7409" data-img="https://images.unsplash.com/photo-1559737558-2f5a35f4523b?auto=format&fit=crop&w=400&q=80">
+          <div class="product-image"><img src="https://images.unsplash.com/photo-1559737558-2f5a35f4523b?auto=format&fit=crop&w=400&q=80" alt="Kepiting goreng"><span class="discount">-13%</span></div><div class="product-body"><div class="product-name">Kepiting Goreng Spesial</div><div class="old-price">Rp 8.509</div><div class="new-price">Rp 7.409</div><button class="btn-cart add-cart"><i class="fa-solid fa-cart-plus"></i> Keranjang</button></div>
+        </article>
+        <article class="product-card" data-name="Cappuccino latte" data-price="1200" data-img="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=400&q=80">
+          <div class="product-image"><img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=400&q=80" alt="Cappuccino latte"><span class="discount">-40%</span></div><div class="product-body"><div class="product-name">Cappuccino latte</div><div class="old-price">Rp 2.000</div><div class="new-price">Rp 1.200</div><button class="btn-cart add-cart"><i class="fa-solid fa-cart-plus"></i> Keranjang</button></div>
+        </article>
+        <article class="product-card" data-name="Nasi Goreng Campur" data-price="1200" data-img="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=400&q=80">
+          <div class="product-image"><img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=400&q=80" alt="Nasi goreng"><span class="discount">-60%</span></div><div class="product-body"><div class="product-name">Nasi Goreng Campur</div><div class="old-price">Rp 3.000</div><div class="new-price">Rp 1.200</div><button class="btn-cart add-cart"><i class="fa-solid fa-cart-plus"></i> Keranjang</button></div>
+        </article>
+        <article class="product-card" data-name="Chicago Pizza" data-price="9390" data-img="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=400&q=80">
+          <div class="product-image"><img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=400&q=80" alt="Chicago pizza"><span class="discount">-1%</span></div><div class="product-body"><div class="product-name">Chicago Pizza</div><div class="old-price">Rp 9.590</div><div class="new-price">Rp 9.390</div><button class="btn-cart add-cart"><i class="fa-solid fa-cart-plus"></i> Keranjang</button></div>
+        </article>
+        <article class="product-card" data-name="Neapolitan Pizza" data-price="1340" data-img="https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=400&q=80">
+          <div class="product-image"><img src="https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=400&q=80" alt="Neapolitan pizza"><span class="discount">-8%</span></div><div class="product-body"><div class="product-name">Neapolitan Pizza</div><div class="old-price">Rp 1.450</div><div class="new-price">Rp 1.340</div><button class="btn-cart add-cart"><i class="fa-solid fa-cart-plus"></i> Keranjang</button></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="benefits" id="cara-belanja">
+      <div class="benefit"><span class="benefit-icon"><i class="fa-solid fa-rocket"></i></span><div><strong>Pengiriman gratis</strong><small>Untuk pesanan min Rp 999.000</small></div></div>
+      <div class="benefit"><span class="benefit-icon"><i class="fa-solid fa-arrows-rotate"></i></span><div><strong>90 uang Kembali</strong><small>Jika barang bermasalah</small></div></div>
+      <div class="benefit"><span class="benefit-icon"><i class="fa-regular fa-credit-card"></i></span><div><strong>Pembayaran</strong><small>Pembayaran aman 100%</small></div></div>
+      <div class="benefit"><span class="benefit-icon"><i class="fa-regular fa-comments"></i></span><div><strong>Dukungan 24 jam</strong><small>Dukungan khusus untuk anda</small></div></div>
+    </section>
+  </div>
+</main>
+
+<nav class="mobile-bottom-nav" aria-label="Navigasi mobile">
+  <a class="active" href="#home"><i class="fa-solid fa-house"></i><span>Home</span></a>
+  <a href="#kategori"><i class="fa-solid fa-list"></i><span>Menu</span></a>
+  <a class="mall" href="#produk"><i class="fa-solid fa-store"></i><span>Mall</span></a>
+  <a href="#promo"><i class="fa-solid fa-circle-play"></i><span>Video</span></a>
+  <a href="#login" onclick="event.preventDefault();toast('Fitur masuk perlu dihubungkan ke sistem login.')"><i class="fa-regular fa-user"></i><span>Masuk</span></a>
+</nav>
+
+<footer class="text-center py-3 border-top small text-secondary">© 2026 TajalaLapak. Belanja Mudah, Hidup Lebih Baik.</footer>
+<div class="toast-cart" id="toastCart"><i class="fa-solid fa-circle-check me-2"></i><span id="toastMessage">Produk ditambahkan ke keranjang.</span></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="assets/js/app.js"></script>
+
+<!-- MODAL LOGIN -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content login-modal">
+            <button type="button" class="btn-close login-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+
+            <div class="row g-0">
+                <!-- BAGIAN KIRI -->
+                <div class="col-md-6 login-benefits">
+                    <div class="benefit-item">
+                        <i class="fa-solid fa-rocket"></i>
+                        <div>
+                            <strong>Pengiriman gratis</strong>
+                            <p>Untuk pesanan min Rp 999.000</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <i class="fa-solid fa-arrows-rotate"></i>
+                        <div>
+                            <strong>90 uang Kembali</strong>
+                            <p>Jika barang Bermasalah</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <i class="fa-regular fa-credit-card"></i>
+                        <div>
+                            <strong>Pembayaran</strong>
+                            <p>Pembayaran aman 100%</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <i class="fa-regular fa-comments"></i>
+                        <div>
+                            <strong>Dukungan 24 jam</strong>
+                            <p>Dukungan khusus untuk anda</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <i class="fa-solid fa-gift"></i>
+                        <div>
+                            <strong>Layanan Hadiah</strong>
+                            <p>Mendukung layanan hadiah</p>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="register-text">
+                        Belum punya akun?
+                        <a href="#daftar" data-bs-dismiss="modal">Daftar sekarang!</a>
+                    </div>
+                </div>
+
+                <!-- BAGIAN KANAN -->
+                <div class="col-md-6 login-form-area">
+                    <h3 id="loginModalLabel">Masuk ke Akun anda</h3>
+
+                    <form action="#" method="post">
+                        <label for="loginContact">
+                            Masukkan email atau no Whatsapp untuk mengirimkan kode OTP
+                        </label>
+
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="loginContact"
+                            name="contact"
+                            placeholder="Email / No. Handphone"
+                            required
+                        >
+
+                        <button type="submit" class="btn login-submit">
+                            Selanjutnya
+                        </button>
+                    </form>
+
+                    <a href="#lupa-password" class="forgot-password">Lupa Password?</a>
+
+                    <div class="login-divider">
+                        <span>metode lainnya</span>
+                    </div>
+
+                    <button type="button" class="btn btn-google">
+                        Google
+                    </button>
+
+                    <button type="button" class="btn btn-facebook">
+                        Facebook
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
