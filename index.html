@@ -33,7 +33,23 @@
       </div>
     </div>
     <div class="mobile-delivery">
-      <div class="location-line"><i class="fa-solid fa-location-dot me-1"></i>Dikirim ke : <a href="#pesan">Pilih Pengiriman</a></div>
+      <!-- <div class="location-line"><i class="fa-solid fa-location-dot me-1"></i>Dikirim ke : <a href="#pesan">Pilih Pengiriman</a></div> -->
+       <div class="location-line">
+          <i class="fa-solid fa-location-dot me-1"></i>
+          Dikirim ke : <a href="javascript:void(0)" onclick="bukaLokasi()">Pilih Pengiriman</a>
+      </div>
+
+      <div class="location-overlay" id="popupLokasi">
+          <div class="location-modal">
+              <h5>Ubah Lokasi<br>Pengiriman</h5>
+              <p>Tulis kota / kecamatan tujuan<br>pengiriman:</p>
+              <input type="text" id="inputLokasi" placeholder="contoh: Bandung, Coblong">
+              <div class="location-actions">
+                  <button type="button" class="btn-batal" onclick="tutupLokasi()">Batal</button>
+                  <button type="button" class="btn-simpan" onclick="simpanLokasi()">Simpan</button>
+              </div>
+          </div>
+      </div>
       <div class="mobile-account">
         <span class="account-avatar"><i class="fa-regular fa-user"></i></span>
         <div><strong>Hai, Pengunjung!</strong><small>Akses semua fitur, yuk~</small></div>

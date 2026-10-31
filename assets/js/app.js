@@ -101,3 +101,49 @@ const cart = [];
     const s = String(remaining%60).padStart(2,'0');
     document.getElementById('countdown').textContent = `${h}:${m}:${s}`;
   },1000);
+
+  const popupLokasi = document.getElementById('popupLokasi');
+const inputLokasi = document.getElementById('inputLokasi');
+const teksLokasi = document.querySelector('.location-line');
+
+function bukaLokasi() {
+    const lokasiTersimpan = localStorage.getItem('lokasiPengiriman') || '';
+    inputLokasi.value = lokasiTersimpan;
+    popupLokasi.classList.add('active');
+    setTimeout(() => inputLokasi.focus(), 100);
+}
+
+function tutupLokasi() {
+    popupLokasi.classList.remove('active');
+}
+
+function simpanLokasi() {
+    const lokasi = inputLokasi.value.trim();
+
+    if (!lokasi) {
+        alert('Masukkan kota atau kecamatan tujuan pengiriman!');
+        inputLokasi.focus();
+        return;
+    }
+
+    localStorage.setItem('lokasiPengiriman', lokasi);
+    teksLokasi.innerHTML = `<i class="fa-solid fa-location-dot me-1"></i>Dikirim ke : <a href="javascript:void(0)" onclick="bukaLokasi()">${lokasi.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;')}</a>`;
+
+    tutupLokasi();
+}
+
+popupLokasi.addEventListener('click', function(e) {
+    if (e.target === popupLokasi) tutupLokasi();
+});
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') tutupLokasi();
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const lokasi = localStorage.getItem('lokasiPengiriman');
+
+    if (lokasi) {
+        teksLokasi.innerHTML = `<i class="fa-solid fa-location-dot me-1"></i>Dikirim ke : <a href="javascript:void(0)" onclick="bukaLokasi()">${lokasi.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;')}</a>`;
+    }
+});

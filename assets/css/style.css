@@ -588,3 +588,119 @@
     }
 }
 
+
+.location-line {
+    font-size: 12px;
+    color: #ddd;
+    padding: 8px 12px;
+}
+
+.location-line a {
+    color: inherit;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.location-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: rgba(0, 0, 0, .4);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.location-overlay.active {
+    display: flex;
+}
+
+.location-modal {
+    width: 100%;
+    max-width: 360px;
+    padding: 22px 20px 24px;
+    border-radius: 4px;
+    background: #fff;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, .15);
+    animation: modalMuncul .2s ease;
+}
+
+.location-modal h5 {
+    margin: 0 0 10px;
+    color: #111;
+    font-size: 20px;
+    line-height: 1.25;
+    font-weight: 700;
+}
+
+.location-modal p {
+    margin-bottom: 18px;
+    color: #858b94;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.location-modal input {
+    width: 100%;
+    max-width: 260px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    outline: none;
+    font-size: 12px;
+    text-align: left;
+}
+
+.location-modal input:focus {
+    border-color: #238b35;
+}
+
+.location-actions {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 18px;
+}
+
+.location-actions button {
+    min-width: 70px;
+    padding: 9px 18px;
+    border-radius: 2px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.btn-batal {
+    color: #444;
+    background: #fff;
+    border: 1px solid #ddd;
+}
+
+.btn-simpan {
+    color: #fff;
+    background: #555;
+    border: 1px solid #555;
+}
+
+.btn-simpan:hover {
+    background: #238b35;
+    border-color: #238b35;
+}
+
+@keyframes modalMuncul {
+    from {
+        opacity: 0;
+        transform: scale(.96);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 480px) {
+    .location-modal {
+        max-width: 100%;
+    }
+}
