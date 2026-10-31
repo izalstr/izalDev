@@ -168,9 +168,9 @@
       .section-wrap{max-width:540px;padding:0 8px}
       #layanan{background:#fff;border-radius:0 0 12px 12px;padding:8px 9px 10px;margin-bottom:8px; border-radius:16px;}
       #layanan .heading-band{display:none}
-      .service-row{grid-template-columns:repeat(4,minmax(0,1fr));gap:10px 8px}
-      .service-card{border:0;padding:2px 2px;border-radius:8px;background:transparent}
-      .service-card img{width:50px;height:50px;object-fit:contain;border-radius:13px;padding:0px;margin-bottom:3px}
+      .service-row{grid-template-columns:repeat(4,minmax(0,1fr));gap:8px 6px}
+      .service-card{border:0;padding:7px 2px 5px;border-radius:8px;background:transparent}
+      .service-card img{width:45px;height:45px;object-fit:contain;border-radius:13px;padding:3px;margin-bottom:3px}
       .service-card span{font-size:9px;font-weight:600;min-height:13px}
       #promo{display:none}
       #kategori{display:none}
@@ -283,7 +283,7 @@
 
     .service-row,
     .category-row {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-template-columns: repeat(5, minmax(0, 1fr));
     }
 
     .service-card:nth-child(n+6),
@@ -293,8 +293,8 @@
 
     .service-card img,
     .category-card img {
-        width: 55px;
-        height: 55px;
+        width: 45px;
+        height: 45px;
     }
 
     .product-grid {
@@ -370,8 +370,8 @@
 }
 
 .mobile-discount-item .discount-img img {
-    width: 100%;
-    height: 100%;
+    width: 78%;
+    height: 78%;
     object-fit: contain;
     border-radius: 12px;
 }
