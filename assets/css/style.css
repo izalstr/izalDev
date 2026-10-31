@@ -87,7 +87,7 @@
     .heading-band{background:#f7f7f7;padding:5px 7px;margin-top:17px}
     .service-row,.category-row{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:7px}
     .service-card,.category-card{border:1px solid #e8ece9;border-radius:10px;text-align:center;min-width:0;padding:10px 5px 8px;background:#fff;transition:.18s}
-    .service-card:hover,.category-card:hover{transform:translateY(-3px);box-shadow:0 6px 15px #0000000b;border-color:#b8e6c6}
+    .service-card:hover,.category-card:hover{transform:translateY(-3px);color: #168d3a;}
     .service-card img{width:48px;height:48px;object-fit:contain;margin-bottom:5px}
     .category-card img{width:48px;height:48px;object-fit:cover;border-radius:50%;margin-bottom:6px}
     .service-card span,.category-card span{display:block;font-size:10px;line-height:1.35;min-height:27px}
@@ -166,15 +166,15 @@
       body{background:#f3f5f4;padding-bottom:76px}
       .hero{display:none}
       .section-wrap{max-width:540px;padding:0 8px}
-      #layanan{background:#fff;border-radius:0 0 12px 12px;padding:8px 9px 10px;margin-bottom:8px}
+      #layanan{background:#fff;border-radius:0 0 12px 12px;padding:8px 9px 10px;margin-bottom:8px; border-radius:16px;}
       #layanan .heading-band{display:none}
       .service-row{grid-template-columns:repeat(4,minmax(0,1fr));gap:8px 6px}
       .service-card{border:0;padding:7px 2px 5px;border-radius:8px;background:transparent}
-      .service-card img{width:45px;height:45px;object-fit:contain;background:#eaffd9;border-radius:13px;padding:3px;margin-bottom:3px}
+      .service-card img{width:45px;height:45px;object-fit:contain;border-radius:13px;padding:3px;margin-bottom:3px}
       .service-card span{font-size:9px;font-weight:600;min-height:13px}
       #promo{display:none}
       #kategori{display:none}
-      .mobile-balance{display:flex;align-items:center;gap:10px;background:#fff;border-radius:16px;padding:12px;margin:8px 0}
+      .mobile-balance{display:flex;align-items:center;gap:10px;background:#fff;border-radius:16px;padding:8px 9px 10px; margin:8px}
       .mobile-balance .balance-icon{width:32px;height:32px;background:#eff9f0;border-radius:50%;display:grid;place-items:center;color:#178d35}
       .mobile-balance .balance-info{flex:1}
       .mobile-balance strong{font-size:13px}
@@ -185,7 +185,7 @@
       .mobile-discount-panel .panel-title{font-size:12px;font-weight:700;margin-bottom:9px}
       .mobile-discount-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:25px 25px}
       .mobile-discount-item{text-align:center;min-width:0;color:#252c28}
-      .mobile-discount-item .discount-img{position:relative;display:grid;place-items:center;height:49px;background:#e8ffd5;border-radius:12px;margin-bottom:4px;overflow:visible}
+      .mobile-discount-item .discount-img{position:relative;display:grid;place-items:center;height:49px;border-radius:12px;margin-bottom:4px;overflow:visible}
       .mobile-discount-item img{width:100%;height:100%;object-fit:contain;padding:3px;border-radius:12px}
       .mobile-discount-item b{position:absolute;top:-4px;left:0;background:#222;color:#fff;font-size:7px;padding:2px 4px;border-radius:7px;white-space:nowrap}
       .mobile-discount-item span{display:block;font-size:9px;font-weight:600}
@@ -355,18 +355,18 @@
     width: 100%;
     aspect-ratio: 1 / 1;
     max-width: 76px;
-    background: linear-gradient(145deg, #f0fff1, #e1f8e5);
-    border: 1px solid #e3f2e5;
+    /* background: linear-gradient(145deg, #f0fff1, #e1f8e5); */
+    /* border: 1px solid #e3f2e5; */
     border-radius: 20px;
     overflow: visible;
-    margin-bottom: 8px;
-    box-shadow: 0 4px 12px rgba(28, 110, 54, .07);
-    transition: box-shadow .25s ease, background .25s ease;
+    margin-bottom: 0px;
+    /* box-shadow: 0 4px 12px rgba(28, 110, 54, .07);
+    transition: box-shadow .25s ease, background .25s ease; */
 }
 
 .mobile-discount-item:hover .discount-img {
-    background: linear-gradient(145deg, #e1ffe5, #c8f5d0);
-    box-shadow: 0 7px 18px rgba(28, 110, 54, .15);
+    /* background: linear-gradient(145deg, #e1ffe5, #c8f5d0);
+    box-shadow: 0 7px 18px rgba(28, 110, 54, .15); */
 }
 
 .mobile-discount-item .discount-img img {
@@ -400,7 +400,7 @@
 
 @media (max-width: 575.98px) {
     .mobile-discount-grid {
-        gap: 15px 8px;
+        gap: 25px 8px;
     }
 
     .mobile-discount-item .discount-img {
